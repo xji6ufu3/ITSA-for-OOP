@@ -1,17 +1,13 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-using std::string;
-using std::cin;
-using std::cout;
-using std::stringstream;
+using namespace std;
+int power(int num, int power){
+    int count = 1;
+    for(int i = 0; i < power; i++) count *= num;
+    return count;
+}
 int main(){
-    // char str1[10][6] = {"*****","    *","*****","*****","*   *","*****","*****","*****","*****","*****"};
-    // char str2[10][6] = {"*   *","    *","    *","    *","*   *","*    ","*    ","    *","*   *","*   *"};
-    // char str3[10][6] = {"*   *","    *","*****","*****","*****","*****","*****","    *","*****","*****"};
-    // char str4[10][6] = {"*   *","    *","*    ","    *","    *","    *","*   *","    *","*   *","    *"};
-    // char str5[10][6] = {"*****","    *","*****","*****","    *","*****","*****","    *","*****","    *"};
-    // char num[5];
     string strNum;
     string str[5][10] = {
         {"*****","    *","*****","*****","*   *","*****","*****","*****","*****","*****"},
@@ -25,39 +21,9 @@ int main(){
     stringstream ss;
     ss << strNum;
     ss >> num;
-
-    cout << (num%=1000);
-
-    // for(int i = 0; i < 5; i++){
-    //     cout << str[i][num%1000]+' '+str[i][num]
-    // }
-
-    /*
-    for(int i = 0; i < 4; i++){
-        printf("%s",str1[num[i]-'0']);
-        if(i != 3) printf(" ");
-        else printf("\n");
+    for(int i = 0; i < 5; i++){
+        for(int j = 3; j >= 0; j--)
+            cout << str[i][num%power(10,j+1)/power(10,j)]+' ';
+        cout << '\n';
     }
-    for(int i = 0; i < 4; i++){
-        printf("%s",str2[num[i]-'0']);
-        if(i != 3) printf(" ");
-        else printf("\n");
-    }
-    for(int i = 0; i < 4; i++){
-        printf("%s",str3[num[i]-'0']);
-        if(i != 3) printf(" ");
-        else printf("\n");
-    }
-    for(int i = 0; i < 4; i++){
-        printf("%s",str4[num[i]-'0']);
-        if(i != 3) printf(" ");
-        else printf("\n");
-    }
-    for(int i = 0; i < 4; i++){
-        printf("%s",str5[num[i]-'0']);
-        if(i != 3) printf(" ");
-        else printf("\n");
-    }
-    return 0;
-    */
 }
