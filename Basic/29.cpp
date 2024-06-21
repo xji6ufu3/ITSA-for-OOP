@@ -3,7 +3,6 @@ using namespace std;
 int main(){
     string str;
     cin >> str;
-    scanf("%s",str);
     int sum = 0;
     int abc[26] = {10,11,12,13,14,15,16,17,34,18,19,20,21,22,35,23,24,25,26,27,28,29,32,30,31,33};
     int x = abc[str[0]-'A'];
