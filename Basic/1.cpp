@@ -22,8 +22,8 @@ int main(){
     ss << strNum;
     ss >> num;
     for(int i = 0; i < 5; i++){
-        for(int j = 3; j >= 0; j--)
+        for(int j = 3; j >= 1; j--)
             cout << str[i][num%power(10,j+1)/power(10,j)]+' ';
-        cout << '\n';
+        cout << str[i][num%power(10,1)/power(10,0)]+'\n';
     }
 }
