@@ -1,14 +1,15 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
+using namespace std; 
 int main(){
     int n,y,tmp;
-    scanf("%d",&n);
-    char str[][20] = {"pig","rat","ox","tiger","rabbit","dragon","snake","horse","sheep","monkey","rooster","dog"};
+    cin >> n;
+    string str[] = {"pig","rat","ox","tiger","rabbit","dragon","snake","horse","sheep","monkey","rooster","dog"};
     while(n--){
-        scanf("%d",&y);
+        cin >> y;
         tmp = y;
         if(tmp<0) tmp++;
         while(tmp<0) tmp+=12;
-        printf("%d %s\n",y,str[tmp%12]);
+        cout << y << ' ' << str[tmp%12]+'\n';
     }
 }

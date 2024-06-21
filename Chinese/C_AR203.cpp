@@ -1,11 +1,12 @@
-#include <stdio.h>
-#include <string.h>
+#include <iostream>
+#include <string>
+using namespace std; 
 int main(){
     int n,a;
-    scanf("%d",&n);
-    char str[][20] = {"Mercury","Venus","Earth","Mars","Juputer","Saturn","Uranus","Neptunus","Pluto"};
+    cin >> n;
+    string str[] = {"Mercury","Venus","Earth","Mars","Juputer","Saturn","Uranus","Neptunus","Pluto"};
     while(n--){
-        scanf("%d",&a);
-        printf("%d %s\n",a,str[a-1]);
+        cin >> a;
+        cout << a << ' '+str[a-1]+'\n';
     }
 }
